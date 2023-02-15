@@ -32,11 +32,11 @@ cd $BUILD_DIR
 #####
 SRC=${BUILD_DIR}/${VENDOR_DIR}/ffmpeg
 DEST=${CACHE_DIR}/buildcache
-echo DEST
-if [[ -f "$CACHE_DIR/buildcache" ]]
+echo $DEST
+if [[ -d "$DEST/ffmpeg" ]]
 then
   echo "ffmpeg cache exist. Using cache" | output
-  mkdir -p "$VENDOR_DIR/ffmpeg"
+  mkdir -p $SRC
   cp -r ${DEST} ${SRC}
   exit 1
 fi
