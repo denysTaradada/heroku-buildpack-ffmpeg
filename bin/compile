@@ -32,6 +32,7 @@ cd $BUILD_DIR
 #####
 SRC=${BUILD_DIR}/${VENDOR_DIR}/ffmpeg
 DEST=${CACHE_DIR}/buildcache
+echo DEST
 if [[ -f "$CACHE_DIR/buildcache" ]]
 then
   echo "ffmpeg cache exist. Using cache" | output
@@ -79,7 +80,7 @@ cp -r ${SRC} ${DEST}
 echo $SRC #/tmp/build_3905dd08/vendor/ffmpeg
 echo $DEST #/tmp/codon/tmp/cache/buildcache
 cd $DEST
-ls -a
+echo $(ls)
 #cp -a . $CACHE_DIR
 
 echo "Installation successful" | output
