@@ -79,7 +79,7 @@ cp -r ${SRC} ${DEST}
 echo $SRC #/tmp/build_3905dd08/vendor/ffmpeg
 echo $DEST #/tmp/codon/tmp/cache/buildcache
 cd $DEST
-echo ls -a
+ls -a
 #cp -a . $CACHE_DIR
 
 echo "Installation successful" | output
