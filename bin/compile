@@ -30,11 +30,13 @@ FFMPEG_ARCHIVE_NAME="ffmpeg.tar.xz"
 cd $BUILD_DIR
 
 #####
-if [[ -f "$CACHE_DIR/ffmpeg" ]]
+SRC=${BUILD_DIR}/${VENDOR_DIR}/ffmpeg
+DEST=${CACHE_DIR}/buildcache
+if [[ -f "$CACHE_DIR/buildcache" ]]
 then
   echo "ffmpeg cache exist. Using cache" | output
   mkdir -p "$VENDOR_DIR/ffmpeg"
-  cp -a "$CACHE_DIR/." "$VENDOR_DIR/ffmpeg/"
+  cp -r ${DEST} ${SRC}
   exit 1
 fi
 #####
@@ -72,10 +74,12 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/ffmpeg"' >> $PROFILE_PATH
 
 cd ~
-SRC=${BUILD_DIR}/${VENDOR_DIR}/ffmpeg
-DEST=${CACHE_DIR}/buildcache
 mkdir -p $(dirname ${DEST})
 cp -r ${SRC} ${DEST}
+echo $SRC #/tmp/build_3905dd08/vendor/ffmpeg
+echo $DEST #/tmp/codon/tmp/cache/buildcache
+cd $DEST
+echo ls -a
 #cp -a . $CACHE_DIR
 
 echo "Installation successful" | output
