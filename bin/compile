@@ -33,6 +33,7 @@ cd $BUILD_DIR
 SRC=${BUILD_DIR}/${VENDOR_DIR}/ffmpeg
 DEST=${CACHE_DIR}/buildcache
 echo $DEST
+rm "$DEST/ffmpeg"
 if [[ -d "$DEST/ffmpeg" ]]
 then
   echo "ffmpeg cache exist. Using cache" | output
@@ -75,7 +76,7 @@ else
   echo $DEST #/tmp/codon/tmp/cache/buildcache
   cd ~
   mkdir -p $(dirname ${DEST})
-  cp -r ${SRC} ${DEST}/ffmpeg
+  cp -r ${SRC} ${DEST}
   cd $DEST
   echo $(ls)
 fi
