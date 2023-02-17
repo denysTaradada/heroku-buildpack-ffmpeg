@@ -75,7 +75,7 @@ else
   echo $DEST #/tmp/codon/tmp/cache/buildcache
   cd ~
   mkdir -p $(dirname ${DEST})
-  cp -r ${SRC} ${DEST}
+  cp -r ${SRC} ${DEST}/ffmpeg
   cd $DEST
   echo $(ls)
 fi
